@@ -1,0 +1,16 @@
+{
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "Servidor para entrega 8 del obligatorio de JaP 2021.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Federico Cuelho Lariau",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {}
+}
