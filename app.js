@@ -68,7 +68,7 @@ app.post("/new-order", function (req, res) {
     for (let i = 0; i < cartProducts.length; i++) {
         const product = cartProducts[i];
 
-        productHTML += `
+        productHTML = `
         *****************************************
 
         Nombre: ${product.name}
@@ -77,7 +77,7 @@ app.post("/new-order", function (req, res) {
 
         *****************************************
         `
-        products = productHTML;
+        products += productHTML;
     }
 
     //Crea un texto con los datos de la orden.
@@ -100,10 +100,11 @@ app.post("/new-order", function (req, res) {
 
     Dirección de envío:
 
-    ${req.body.name} ${req.body.lastname}
-    ${req.body.email}
+    ${req.body.name} ${req.body.lastname}.
+    ${req.body.email}.
     ${req.body.address}, ${req.body.address2}
-    ${req.body.country}, ${req.body.state}, ${req.body.zip}
+    ${req.body.state}, ${req.body.zip}
+    ${req.body.country}.
 
     -----------------------------------------
 

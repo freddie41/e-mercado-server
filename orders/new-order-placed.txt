@@ -1,8 +1,9 @@
 
-    -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
     Usuario: Federico Cuelho Lariau.
-    Fecha: 29/11/2021 03:44:21.
+    Fecha: 29/11/2021 18:48:36.
 
     -----------------------------------------
     
@@ -11,7 +12,7 @@
         *****************************************
 
         Nombre: Pino de olor para el auto
-        Cantidad: 2
+        Cantidad: 5
         Costo unitario: USD 100
 
         *****************************************
@@ -26,17 +27,18 @@
         
     -----------------------------------------
     
-    Tipo de envío: Premium (2-5 días).
-    Costo de envío: USD 3751.
+    Tipo de envío: Standard (12-15 días).
+    Costo de envío: USD 1251.
 
     -----------------------------------------
 
     Dirección de envío:
 
-    Federico Cuelho
-    fcl41@me.com
-    Santiago Vazquez y Calle 2, Casa de quincho, SAN FE
-    Uruguay, Maldonado, 20200
+    Federico Cuelho.
+    fcl41@me.com.
+    Piedras 106, Ap 204
+    Montevideo, 11000
+    Uruguay.
 
     -----------------------------------------
 
@@ -44,8 +46,8 @@
 
     -----------------------------------------
 
-    Subtotal de la orden: USD 25005.
-    Total de la orden: USD 28756.
+    Subtotal de la orden: USD 25013.
+    Total de la orden: USD 26264.
 
     -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
