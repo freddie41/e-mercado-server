@@ -1,0 +1,53 @@
+
+    -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+    Usuario: Federico Cuelho Lariau.
+    Fecha: 29/11/2021 03:44:21.
+
+    -----------------------------------------
+    
+    Productos de la orden: 
+    
+        *****************************************
+
+        Nombre: Pino de olor para el auto
+        Cantidad: 2
+        Costo unitario: USD 100
+
+        *****************************************
+        
+        *****************************************
+
+        Nombre: Suzuki Celerio
+        Cantidad: 2
+        Costo unitario: USD 12500
+
+        *****************************************
+        
+    -----------------------------------------
+    
+    Tipo de envío: Premium (2-5 días).
+    Costo de envío: USD 3751.
+
+    -----------------------------------------
+
+    Dirección de envío:
+
+    Federico Cuelho
+    fcl41@me.com
+    Santiago Vazquez y Calle 2, Casa de quincho, SAN FE
+    Uruguay, Maldonado, 20200
+
+    -----------------------------------------
+
+    Método de pago seleccionado: Transferencia bancaria.
+
+    -----------------------------------------
+
+    Subtotal de la orden: USD 25005.
+    Total de la orden: USD 28756.
+
+    -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+
+    

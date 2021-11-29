@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <!-- Google source data -->
+  <meta name="google-signin-client_id"
+    content="428794117897-af3u2j4lhobceldnrq8s6cdnnuucd6l8.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Bootstrap CSS/JS -->
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  
+  <!-- Font awesome source -->
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+</head>
+  
+<body>
+  <!-- Sidebar wrapper -->
+  <div class="wrapper d-md-none d-sm-block">
+  
+    <!-- Sidebar -->
+    <nav class="sidebar shadow">
+  
+      <!-- Close sidebar menu btn -->
+      <div class="dismiss">
+        <i class="fas fa-times"></i>
+      </div>
+  
+      <!-- Emercado logo -->
+      <div class="logo">
+        <h2 class="text-center"><a href="home.html"></a></h2>
+      </div>
+  
+      <!-- User login info -->
+      <div class="user">
+        <div class="text-muted">
+          <p class="m-0 text-center"><small id="user-sm"></small></p>
+        </div>
+      </div>
+  
+      <!-- Menu elements -->
+      <ul class="list-unstyled menu-elements">
+        <li class="active">
+          <a href="index.html" style="text-decoration: none;"><i class="fas fa-home"></i>Inicio</a>
+        </li>
+        <li>
+          <a href="categories.html" style="text-decoration: none;"><i class="fas fa-th"></i>Categorías</a>
+        </li>
+        <li>
+          <a href="products.html" style="text-decoration: none;"><i class="fas fa-tags"></i>Productos</a>
+        </li>
+        <li>
+          <a href="sell.html" style="text-decoration: none;"><i class="fas fa-handshake"></i>Vender</a>
+        </li>
+        <li>
+          <a href="cart.html" style="text-decoration: none;"><i class="fas fa-shopping-cart"></i>Carrito</a>
+        </li>
+        <li>
+          <a href="my-profile.html" style="text-decoration: none;"><i class="fas fa-user"></i>Mi perfil</a>
+        </li>
+  
+        <div class="logout">
+          <button class="btn btn-secondary btn-block shadow-sm" type="button" role="button"
+            onclick="signOut();">Salir</button>
+          <script>
+            function onLoad() {
+              gapi.load('auth2', function () {
+                gapi.auth2.init();
+              });
+            }
+
+            function signOut() {
+              let auth2 = gapi.auth2.getAuthInstance();
+              if (auth2 !== null) {
+                auth2.signOut().then(function () {
+                  localStorage.clear();
+                  window.location.href = "login.html";
+                });
+              } else {
+                localStorage.clear();
+                window.location.href = "login.html";
+              }
+            }
+          </script>
+          <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+        </div>
+  
+    </nav>
+    <!-- End sidebar -->
+  
+    <!-- Overlay -->
+    <div class="overlay"></div>
+  
+    <!-- Open sidebar menu -->
+    <a class="btn btn-info open-menu shadow-sm" href="#" role="button">
+      <span><i class="fas fa-bars"></i></span>
+    </a>
+  
+  </div>
+  <!-- End Sidebar wrapper -->
+  
+  <!-- Navbar -->
+  <nav class="site-header sticky-top py-1 bg-dark d-none d-md-block">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="index.html" style="text-decoration: none;">
+        <i class="fas fa-home"></i>Inicio
+      </a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html" style="text-decoration: none;">
+        <i class="fas fa-th"></i>Categorías
+      </a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html" style="text-decoration: none;">
+        <i class="fas fa-tags"></i>Productos
+      </a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html" style="text-decoration: none;">
+        <i class="fas fa-handshake"></i>Vender
+      </a>
+  
+      <!-- Menú desplegable -->
+      <div class="my-1 d-none d-md-inline-block">
+        <div class="dropdown">
+          <!-- Username del usuario logueado -->
+          <button type="button" class="btn btn-info btn-sm dropdown-toggle" href="#" id="user" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" data-offset="10,15"></button>
+          <div class="dropdown-menu dropdown-menu-right bg-light shadow" aria-labelledby="user" x-placement="bottom-end"
+            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(10px, 46px, 0px);">
+            <a class="dropdown-item px-3 py-2" href="my-profile.html">
+              <i class="fas fa-user"></i>Mi perfil
+            </a>
+            <a class="dropdown-item px-3 py-2" href="cart.html">
+              <i class="fas fa-shopping-cart"></i>Carrito
+            </a>
+            <!-- Logout -->
+            <a class="dropdown-item px-3 py-2" href="#" id="signOut" onclick="signOut();">
+              <i class="fas fa-sign-out-alt"></i>Salir</a>
+            <script>
+              function onLoad() {
+                gapi.load('auth2', function () {
+                  gapi.auth2.init();
+                });
+              }
+
+              function signOut() {
+                let auth2 = gapi.auth2.getAuthInstance();
+                if (auth2 !== null) {
+                  auth2.signOut().then(function () {
+                    localStorage.clear();
+                    window.location.href = "login.html";
+                  });
+                } else {
+                  localStorage.clear();
+                  window.location.href = "login.html";
+                }
+              }
+            </script>
+            <script src="https://apis.google.com/js/platform.js?onload=onLoad" async="" defer=""
+              gapi_processed="true"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+    
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción de la categoría</h2>
+        <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
+          seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
+      </div>
+      <h3 id="categoryName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="categoryDescription"></p>
+        </dd>
+
+        <dt>Cantidad de productos en la categoría</dt>
+        <dd>
+          <p id="productCount"></p>
+        </dd>
+
+        <dt>Criterio para incluir productos en esta categoría</dt>
+        <dd>
+          <p id="productCriteria"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+      </dl>
+      <div class="mb-4">
+        <a type="button" class="btn btn-outline-info btn-lg btn-block" href="products.html">Ver productos</a>
+      </div>
+    </div>
+  </main>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#" class="text-info">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2021</p>
+      <p>Clickea <a class="text-info" target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.
+      </p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/category-info.js"></script>
+</body>
+
+</html>

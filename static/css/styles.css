@@ -1,0 +1,708 @@
+/***** ESTILO MOBILE RESPONSIVE *****/
+
+/***** Wrapper *****/ 
+.wrapper {
+  display: block;
+}
+
+/***** Sidebar *****/
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -255px;
+  z-index: 999;
+  background: #f8f9fa;
+  color: #888;
+  transition: all .3s;
+  text-align: left;
+  overflow-y: auto;
+}
+
+.sidebar.active {
+  transform: translateX(255px);
+}
+
+/***** Sidebar/Overlay *****/ 
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.600);
+  z-index: 998;
+  transition: opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s;
+}
+
+.overlay.active {
+  pointer-events: auto;
+  display: block;
+  opacity: 1;
+  
+  /* Preventing strange flickering in Webkit */
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.open-menu {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 997;
+}
+
+/* Estilo del btn dedicado al cierre del sidebar */
+.dismiss {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: all .3s;
+  background: #ddd;
+  color: #888;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dismiss:hover,
+.dismiss:focus {
+  background: #ccc;
+  color: #888;
+}
+
+/* Estilo para el logo, los enlaces del menu y los iconos */
+.sidebar .logo {
+  padding: 20px 10px 0px;
+  transition: all .3s;
+}
+
+.sidebar .logo a {
+  display: inline-block;
+  width: 220px;
+  height: 60px;
+  background: url(../img/logo.png) left top no-repeat;
+  border: 0;
+  text-indent: -999999px;
+}
+
+/* Estilo para la img de logo */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+ 
+    .sidebar .logo a {
+        background-image: url(../img/cover_back_sidebar.png) !important;
+        background-repeat: no-repeat !important;
+        background-size: 220px !important;
+    }
+ 
+}
+
+/* Estilo del icono correspondiente al usuario logueado en el sidebar */
+.user p i {
+  margin-right: 10px;
+}
+
+/* Estilo del nombre de usuario logueado en el sidebar */
+.user {
+  display: block;
+  padding: 10px 20px;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+}
+
+/* Estilo de los enlaces del menu */
+.sidebar ul li a {
+  display: block;
+  padding: 10px 20px;
+  border: 0;
+  color: #6c757d;
+}
+
+.sidebar ul li a:focus,
+.sidebar ul li.active > a:focus {
+  outline: 0;
+  background: #ddd;
+  color: #6c757d;
+}
+
+.sidebar ul li.active > a:hover {
+  outline: 0;
+  background: #ddd;
+  color: #212529;
+}
+
+.sidebar ul li a:hover {
+  outline: 0;
+  background: #ddd;
+  color: #212529;
+}
+
+.sidebar ul li a i {
+  margin-right: 5px;
+}
+
+.sidebar ul ul a {
+  background: #fff;
+  padding-left: 30px;
+  font-size: 14px;
+}
+
+.sidebar ul ul li.active > a {
+  background: #ccc;
+}
+
+.sidebar a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.sidebar .dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+/* Estilo para el btn de logout del sidebar */
+.sidebar .logout {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/***** ESTILO DESKTOP RESPONSIVE *****/
+
+/* Animación al ejecutar un scrollUp */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tipografia utilizada en el sitio */
+.jumbotron, .card-body, .container, .container-fluid, .site-header {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.light-text {
+  color: white;
+}
+
+/* Espaciado para mantener todo el contenido del body
+ visible y el footer siempre al final del viewport */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Estilo de la img de bienvenida al sitio */
+.jumbotron .display-4 {
+    font-weight: bold;
+}
+
+.jumbotron {
+  height: 50vh;
+  padding: 5em;
+  margin-bottom: 0;
+  background-color: #53C0FB;
+  background: url('../img/cover_back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
+}
+
+.jumbotron-fluid {
+  align-self: center;
+  height: 30vh;
+  padding: 15px;  margin-bottom: 0;
+  background-color: #53C0FB;
+  background: url('../img/cover_back_sm.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
+}
+
+@media (min-width: 375px) {
+  .jumbotron {
+    padding: 6rem;
+  }
+  .jumbotron-fluid {
+    padding: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.jumbotron .lead{
+  font-size: 38px;
+}
+
+/* Estilo del footer */
+footer {
+  border-top: .0425rem solid rgba(0, 0, 0, .1);
+  background: #fff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+footer p {
+  margin-bottom: .1rem;
+}
+
+/* Estilo del navbar */
+.site-header a {
+  color: #fff;
+  transition: color 0.10s;
+}
+
+.site-header a:hover {
+  color: #17a2b8;
+}
+
+.site-header .dropdown-menu a {
+  display: block;
+  color: #6c757d;
+  transition: color 0s;
+}
+
+.site-header .dropdown-menu a:hover {
+  display: block;
+  color: #212529;
+}
+
+#userInfo {
+  color:white;
+}
+
+/* Estilo de los iconos presentes en 
+el site header y dropdown */
+.site-header a i {
+  margin-right: 10px;
+}
+
+/* Estilo del pool de archivos */
+.dropzone{
+  border: 2px dashed #0087F7;
+  border-radius: 5px;
+  background: white;
+}
+
+/* Control de ancho de las alertas responsive
+    para mobile y resoluciones superiores */
+@media (max-width: 576px) {
+  .alert {
+    position: absolute;
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    z-index: 10;
+    top: 158px;
+    width: 92%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (min-width: 576px) {
+  .alert {
+    position: absolute;
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    z-index: 10;
+    top: 178px;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Spinners de carga del sitio */
+.lds-ring {
+  color: #17a2b8;
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  top:50%;
+  left: 50%;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#spinner-wrapper {
+  position: fixed;
+  background-color: rgba(0,0,0,0.5);
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+  z-index: 1021;
+  display: none;
+}
+
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+  position: relative; 
+}
+
+/* style icon */
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+}
+
+/* align icon */
+.left-addon .fa  {
+  left:  0px;
+}
+
+/* icon padding  */
+.left-addon input  {
+  padding-left:  35px;
+}
+
+/* Forces image to be 100% width
+ and not max width of 100% */
+.carousel-item .img-responsive {
+  width:100%;
+  border-radius: 0.25rem;
+}
+
+/* Anchors are inline so you need ot make
+them block to go full width */
+.carousel-item a {
+  display: block;
+  width:100%;
+}
+
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+#commentDate {
+  float: left;
+}
+
+/* Estilo en las calificaciones por estrellas */
+.star-rating {
+  line-height:32px;
+  font-size:15px;
+  float: right;
+}
+
+.checked {
+  color: orange;
+}
+
+.set-star-rating {
+  direction: rtl;
+  display: block;
+  padding: 2px;
+  font-size: 15px;
+  float: left;
+}
+
+.set-star-rating input[type=radio] {
+  display: none
+}
+
+.set-star-rating label {
+  color: #bbb;
+  font-size: 15px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out
+}
+
+.set-star-rating label:hover,
+.set-star-rating label:hover ~ label,
+.set-star-rating input[type=radio]:checked ~ label {
+  color: orange;
+}
+
+#relatedBtnProd {
+  float: right;
+}
+
+/* Estilo de tarjetas de productos relacionados */
+#relatedProdCards {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  cursor: pointer;
+}
+
+#relatedProdCards:hover {
+   transform: scale(1.02);
+   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+/* Estilo de cards en home y listado de productos */
+.custom-card {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+}
+
+.custom-card:hover {
+   transform: scale(1.02);
+   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+/* Estilo de menus desplegables */
+.dropdown-menu {
+  padding: 5px 5px;
+}
+
+.dropdown-menu > a:hover {
+  background-image: none;
+  border-radius: 5px;
+  background-color: #dae0e5;
+}
+/* Color y sombreado de los input box */
+.form-control:focus,
+.custom-select:focus {
+  border-color: #17a2b8;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(19, 132, 150, 0.6);
+}
+
+#search, #search:focus {
+  border-bottom: 1px solid #ced4da;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  box-shadow: none; 
+}
+
+/* Radio checked state */
+.custom-radio .custom-control-input:checked~.custom-control-label::before,
+.custom-radio .custom-control-input:checked~.custom-control-label::after {
+    background-color: #17a2b8;
+    border-radius: 50%;
+}
+
+/* Checkbox checked state */
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before,
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+  background-color: #17a2b8;
+  border-radius: 0.25rem;
+}
+
+/* Radio active state i.e. displayed while the mouse is being pressed down */
+.custom-radio .custom-control-input:active ~ .custom-control-label::before,
+.custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
+    color: #fff;
+    background-color: #17a2b8;
+}
+    
+/* the shadow; displayed while the radio is in focus */
+.custom-radio .custom-control-input:focus ~ .custom-control-label::before,
+.custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(19, 132, 150, 0.6)
+}
+
+.btn-group-toggle label {
+  cursor: pointer;
+}
+
+a i {
+  cursor: pointer;
+}
+
+/* Animacion de despliegue del collapse de shipping y payment */
+.card-header .flip-chevron .fas  {
+  transform: rotate(-180deg);
+  transition: .20s transform ease-in-out;
+}
+.card-header .collapsed .flip-chevron .fas {
+  transform: rotate(0deg);
+}
+
+/* Indicador clickeable en los collapse de shipping y payment */
+.card-header span {
+  cursor: pointer;
+}
+
+/* Dimensiones de img de metodo banco */
+.banks img, .cards img {
+  width: 39px;
+}
+
+/* Estilo del pefil de usuario */
+.account-settings {
+  margin: 0 0 1rem 0;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.account-settings h5.user-name,
+.account-settings .user-age {
+  margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile .user-email,
+.account-settings .user-profile .user-phone,
+.account-settings .user-years {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #9fa8b9;
+}
+.account-settings .about {
+  margin: 2rem 0 0 0;
+  text-align: center;
+}
+.account-settings .about h5 {
+  margin: 0 0 15px 0;
+  color: #17a2b8;
+}
+.account-settings .about p {
+  font-size: 0.825rem;
+}
+
+.card .h-100 {
+  background: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+  margin-bottom: 1rem;
+}
+.input-group-text {
+  border-top-right-radius: .25rem !important;
+  border-bottom-right-radius: .25rem !important;
+  cursor: pointer;
+}
+
+.profile-pic-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pic-holder {
+  text-align: center;
+  position: relative;
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pic-holder .pic {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.pic-holder .upload-file-block,
+.pic-holder .upload-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(120, 122, 136, 0.7);
+  color: #f8f9fc;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.pic-holder .upload-file-block {
+  cursor: pointer;
+}
+
+.pic-holder:hover .upload-file-block {
+  opacity: 1;
+}
+
+.pic-holder.uploadInProgress .upload-file-block {
+  display: none;
+}
+
+.pic-holder.uploadInProgress .upload-loader {
+  opacity: 1;
+}
