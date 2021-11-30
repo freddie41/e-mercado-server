@@ -83,6 +83,9 @@ function calcSubTotal() {
   }
 
   $("#subtotalCarrito").html(totalCarrito);
+  
+  //Actualizan los costos y cantidades en tiempo real.
+  showProductsSummary();
   calcTotal();
 }
 
@@ -262,8 +265,12 @@ function showProductsSummary() {
     }
 
     htmlContent += `
-        <li id="artSummary${i}"class="list-group-item font-weight-lighter d-flex justify-content-between align-items-center border-0 px-0 py-1">
-          <div>${article.name}</div>
+        <li id="artSummary${i}"class="list-group-item font-weight-normal d-flex justify-content-between align-items-center border-0 px-0 py-1">
+          <div class="d-flex align-items-center">
+            <span class="mr-2">${article.count}</span>
+            <span class="mr-2 small">x</span>
+            ${article.name}
+          </div>
           <div class="d-flex align-items-center">
             <div class="small mr-1">USD</div>
             <div id="artSummarySubTotal${i}">${artSubTotal}</div>
