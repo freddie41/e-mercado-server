@@ -50,6 +50,7 @@ var getJSONData = function (url) {
 //Funcion para mandar info al servidor local.
 var postJSONData = function (url, obj) {
   var result = {};
+  showSpinner();
   return fetch(url, {
     method: 'POST',
     headers: {
